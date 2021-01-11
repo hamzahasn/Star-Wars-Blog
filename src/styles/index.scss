@@ -5,3 +5,16 @@
     max-height: 70px;
 
 }
+.resource-row{
+    width: 100vw;
+    height: auto;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-bottom: 1rem;
+    .card{
+        display: inline-block;
+        max-width: 200px;
+        margin-right: 1rem;
+    }
+}

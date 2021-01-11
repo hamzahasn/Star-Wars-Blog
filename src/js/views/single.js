@@ -6,11 +6,66 @@ import { Context } from "../store/appContext";
 export const Single = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
+
+	const planet_id = params.planets_theid;
+	const person_id = params.person_id;
+	const vehicle_id = params.vehicles_id;
+
+	const type = (function() {
+		if (planet_id) {
+			return "planets";
+		} else if (person_id) {
+			return "people";
+		} else if (vehicle_id) {
+			return "vehicles";
+		}
+		return false;
+	})();
+
+	const getView = () => {
+		switch (type) {
+			case "planets":
+				return planetView();
+
+			case "people":
+				return peopleView();
+
+			case "vehicles":
+				return vehicleView();
+
+			default:
+				return <h1>Type not found</h1>;
+		}
+	};
+
+	const planetsView = () => {
+		return (
+			<div>
+				This is a planet
+				{/*planet details here*/}
+			</div>
+		);
+	};
+	const peopleView = () => {
+		return (
+			<div>
+				This is a person
+				{/*people details here*/}
+			</div>
+		);
+	};
+	const vehicleView = () => {
+		return (
+			<div>
+				This is a vehicle
+				{/*vehicle details here*/}
+			</div>
+		);
+	};
+
 	return (
 		<div className="jumbotron">
-			<h1 className="display-4">This will show the demo element: {store.demo[params.theid].title}</h1>
-
-			<hr className="my-4" />
+			{getView()}
 
 			<Link to="/">
 				<span className="btn btn-primary btn-lg" href="#" role="button">
