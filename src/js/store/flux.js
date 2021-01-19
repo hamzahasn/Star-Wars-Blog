@@ -16,7 +16,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			planets: [],
 			people: [],
-			vehicles: []
+			vehicles: [],
+			details: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -46,6 +47,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => setStore({ vehicles: data.results }))
 					.catch(err => console.error(err));
 			},
+			fetchDetails: url => {
+				fetch(`${url}/`)
+					.then(res => {
+						if (!res.ok) throw new Error(res.statusText);
+						console.log(res.json);
+						return res.json();
+					})
+					.then(data => setStore({ details: data }))
+					.catch(err => console.error(err));
+			},
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();

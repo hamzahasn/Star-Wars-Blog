@@ -7,7 +7,8 @@ export const Single = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 
-	const planet_id = params.planets_theid;
+	const planet_id = params.planets_id;
+	console.log("planet_id", planet_id);
 	const person_id = params.person_id;
 	const vehicle_id = params.vehicles_id;
 
@@ -25,7 +26,7 @@ export const Single = props => {
 	const getView = () => {
 		switch (type) {
 			case "planets":
-				return planetView();
+				return planetsView();
 
 			case "people":
 				return peopleView();

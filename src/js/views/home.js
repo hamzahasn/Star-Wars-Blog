@@ -14,12 +14,15 @@ export const Home = () => {
 				<Card
 					img={"https://via.placeholder.com/300"}
 					title={item.name}
-					btnLink={`/${type}/${index}`}
+					btnLink={`${item.url}`}
 					btnText="View more..."
 					key={index}
+					item={item}
+					id={item.uid}
 				/>
 			);
 		});
+	console.log(store.planets);
 	return (
 		<div className="text-center mt-5">
 			<h1 className="text-danger">Planets</h1>
