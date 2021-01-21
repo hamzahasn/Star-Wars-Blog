@@ -43,7 +43,10 @@ export const Single = props => {
 		return (
 			<div>
 				This is a planet
-				{/*planet details here*/}
+				<ol>
+					<li>{store.details.name}</li>
+					<li>{store.details.climate}</li>
+				</ol>
 			</div>
 		);
 	};
