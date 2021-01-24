@@ -44,8 +44,15 @@ export const Single = props => {
 			<div>
 				This is a planet
 				<ol>
-					<li>{store.details.name}</li>
-					<li>{store.details.climate}</li>
+					<li>Name - {store.details.name}</li>
+					<li>Climate - {store.details.climate}</li>
+					<li>Diameter- {store.details.diameter}</li>
+					<li>Rotation Period - {store.details.rotation_period}</li>
+					<li>Oribital Period - {store.details.orbital_period}</li>
+					<li>Gravity - {store.details.gravity}</li>
+					<li>Population - {store.details.population}</li>
+					<li>Terrain - {store.details.terrain}</li>
+					<li>Surface Water - {store.details.surface_water}</li>
 				</ol>
 			</div>
 		);
@@ -54,7 +61,18 @@ export const Single = props => {
 		return (
 			<div>
 				This is a person
-				{/*people details here*/}
+				{
+					<ol>
+						<li>Height - {store.details.height}</li>
+						<li>Mass - {store.details.mass}</li>
+						<li>Hair Color- {store.details.hair_color}</li>
+						<li>Skin Color - {store.details.skin_color}</li>
+						<li>Eye Color - {store.details.eye_color}</li>
+						<li>Birth Year - {store.details.birth_year}</li>
+						<li>Crew - {store.details.crew}</li>
+						<li>Homeworld - {store.details.homeworld}</li>
+					</ol>
+				}
 			</div>
 		);
 	};
@@ -62,7 +80,20 @@ export const Single = props => {
 		return (
 			<div>
 				This is a vehicle
-				{/*vehicle details here*/}
+				{
+					<ol>
+						<li>Model - {store.details.model}</li>
+						<li>Vehicle Class - {store.details.vehicle_class}</li>
+						<li>Diameter- {store.details.diameter}</li>
+						<li>Manufacturer - {store.details.manufacturer}</li>
+						<li>Cost - {store.details.cost_in_credits}</li>
+						<li>Length - {store.details.length}</li>
+						<li>Crew - {store.details.crew}</li>
+						<li>Passengers - {store.details.passengers}</li>
+						<li>Max atmosphering speed - {store.details.max_atmosphering_speed}</li>
+						<li>Cargo Capacity - {store.details.cargo_capacity}</li>
+					</ol>
+				}
 			</div>
 		);
 	};
